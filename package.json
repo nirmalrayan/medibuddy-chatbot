@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {
   "name": "hello-chatconnector",
   "version": "1.0.0",
@@ -65,4 +64,3 @@
     "zip-folder": "^1.0.0"
   }
 }
->>>>>>> 467a832f946732f4c2da424bd052533269392d7e
