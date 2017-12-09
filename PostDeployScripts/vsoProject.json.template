@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "name": "{WEB_SITE_NAME}",
   "description": "{WEB_SITE_NAME} Azure Bot Service Code",
@@ -9,4 +10,17 @@
       "templateTypeId": "6b724908-ef14-45cf-84f8-768b5384da45"
     }
   }
+=======
+{
+  "name": "{WEB_SITE_NAME}",
+  "description": "{WEB_SITE_NAME} Azure Bot Service Code",
+  "capabilities": {
+    "versioncontrol": {
+      "sourceControlType": "Git"
+    },
+    "processTemplate": {
+      "templateTypeId": "6b724908-ef14-45cf-84f8-768b5384da45"
+    }
+  }
+>>>>>>> 467a832f946732f4c2da424bd052533269392d7e
 }

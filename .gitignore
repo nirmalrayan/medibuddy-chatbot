@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 node_modules/
 *.js.map
 package-lock.json
 .env 
+=======
+node_modules/
+*.js.map
+package-lock.json
+>>>>>>> 467a832f946732f4c2da424bd052533269392d7e
