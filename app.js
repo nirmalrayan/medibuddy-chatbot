@@ -96,10 +96,10 @@ var bot = new builder.UniversalBot(connector,
 })); 
 
 
-server.post('api/messages', connector.listen());
+server.post('/api/messages', connector.listen());
 
 //LUIS Configuration
-var recognizer = new builder.LuisRecognizer("https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/4e0df9eb-a11f-495d-8e90-b0579fde9b86?subscription-key=5ccd61decaf04a0caff771ac48a46ded&timezoneOffset=330&verbose=true&q=");
+var recognizer = new builder.LuisRecognizer("https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/4e0df9eb-a11f-495d-8e90-b0579fde9b86?subscription-key=a821560ec0914368a81cbb4382a0f2a7&verbose=true&timezoneOffset=0&q=");
 //bot.recognizer(recog);
 
 bot.dialog('/refer', new builder.IntentDialog({ recognizers : [recognizer]})
