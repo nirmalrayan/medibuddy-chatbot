@@ -40,7 +40,7 @@ var connector = new builder.ChatConnector
 var bot = new builder.UniversalBot(connector,
 
     function (session) {
-		
+        console.log("masterName" + session.message.address.channelId);
 		if(session.message.address.channelId === 'facebook'){
  			var welcomeCard = new builder.HeroCard(session)
 				.title("Hi "+session.message.address.user.name+"! Nice to see you. I am MediBuddy")
@@ -55,6 +55,7 @@ var bot = new builder.UniversalBot(connector,
 				]); 
 		}
 		else{
+            console.log("masterName" + session.userData.masterName);
 			if(session.userData.masterName){
 				var welcomeCard = new builder.HeroCard(session)
 				.title("Hi " + session.userData.masterName + "! Nice to see you again")
@@ -112,9 +113,12 @@ bot.dialog('/refer', new builder.IntentDialog({ recognizers : [recognizer]})
 //	.matches("Abuse","askforAbuse")
 	.matches("NotTrained","idontknow")
  //  .matches("Logout", "logout")
+    
     .onDefault((session, args) => {
+        console.log('inside')
         session.endDialog("Sorry, I did not understand \`%s\`.  Try saying `show menu` or `#` to go back to the main menu and `help` if you need assistance.", session.message.text);
     })
+    
 );
 
 
