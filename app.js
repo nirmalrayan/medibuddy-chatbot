@@ -18,9 +18,8 @@ require('env2')('.env'); // loads all entries into process.env
 //const BOTAUTH_SECRET = "TESTBOT";  
 
 // Setup Restify Server
-
 var server = restify.createServer();
-server.listen(process.env.PORT || process.env.port || 3978, function() 
+server.listen(process.env.PORT || process.env.port, function() 
 {
    console.log('%s listening to %s', server.name, server.url); 
 });
@@ -87,7 +86,7 @@ var bot = new builder.UniversalBot(connector,
 		}	
 			session.send(new builder.Message(session)
 				.addAttachment(welcomeCard));
-			session.beginDialog("/refer");
+//			session.beginDialog("/refer");
 	}).set('storage', inMemoryStorage); // Register in-memory storage 
 
 //Direct to index.html web page
@@ -100,9 +99,9 @@ var bot = new builder.UniversalBot(connector,
 server.post('/api/messages', connector.listen());
 
 //LUIS Configuration
-var recognizer = new builder.LuisRecognizer("https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/4e0df9eb-a11f-495d-8e90-b0579fde9b86?subscription-key=a821560ec0914368a81cbb4382a0f2a7&verbose=true&timezoneOffset=0&q=");
+//var recognizer = new builder.LuisRecognizer("https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/4e0df9eb-a11f-495d-8e90-b0579fde9b86?subscription-key=a821560ec0914368a81cbb4382a0f2a7&verbose=true&timezoneOffset=0&q=");
 //bot.recognizer(recog);
-
+/*
 bot.dialog('/refer', new builder.IntentDialog({ recognizers : [recognizer]})
     .matches("SayHello", "hello")
 	.matches("GetName", "setName")
@@ -121,7 +120,7 @@ bot.dialog('/refer', new builder.IntentDialog({ recognizers : [recognizer]})
     
 );
 
-
+*/
 bot.dialog("hello", (session, args) => {
 		session.endDialog("Hello. You can type `\"show menu\"` or `\"#\"` at any time of the conversation to go back to the main menu.");
 }).triggerAction({
